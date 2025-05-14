@@ -1,0 +1,274 @@
+/* CSS Adapté pour Awards IUM */
+
+/* Reset général */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header et navigation */
+header.animated-header {
+    background-color: #a32d2d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header.animated-header h1 {
+    font-size: 35px;
+}
+
+nav.animated-nav {
+    background-color: #a32d2d;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav.animated-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+Header de bienvenue */
+header.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+}
+
+header.welcome-header .logo {
+    height: 50px;
+    width: auto;
+}
+
+header.welcome-header .welcome-text {
+    font-size: 1.5rem;
+    color: #a32d2d;
+    text-align: center;
+}
+
+/* Navigation améliorée pour mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+    .nav-toggle {
+        display: block;
+        background-color: #871e1e;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-links a:hover {
+        color: #f39c12;
+    }
+    
+    .nav-links[data-visible="true"]{
+        display: flex;
+    }
+
+    .nav-toggle[aria-expanded="true"]::after {
+        content: " x";
+    }
+
+    /* Header amélioré pour mobile */
+    .welcome-header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 50px;
+    }
+
+    .welcome-text {
+        margin: 10px 0;
+        font-size: 45px;
+    }
+
+   
+
+    /* Espacement formulaire et carousel */
+    .form-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .image-container {
+        margin-top: 0;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form.h3{
+    margin-bottom: 25px;
+    margin-left : 250px
+    font-family:Lucida Calligraphy;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;   
+    font-size: 35px; 
+}
+/* Paragraphe principal */
+#st{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Formulaire d'inscription */
+section.form-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+form.formulaire {
+    background-image: url(9.jpg);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 650px;
+    width: 100%;
+}
+
+form.formulaire label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+form.formulaire input,
+form.formulaire select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+form.formulaire button {
+    background-color: #f76500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+header.animated-header {
+    animation: slideDownFade 1s ease-out;
+}
+
+/* Styles pour le carousel */
+.carousel {
+    width: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.slides {
+    display: flex;
+    width: 250px;
+    animation: slide 9s infinite;
+}
+
+.slides img {
+    width: 250px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    22% { transform: translateX(-100%); }
+    44% { transform: translateX(-200%); }
+    66% { transform: translateX(-300%); }
+    88% { transform: translateX(-400%); }
+    100% { transform: translateX(0); }
+}
+
+/* Indicateurs visuels optionnels */
+
+/* Réduire l'espace entre formulaire et carousel */
+
+
+/* Footer */
+footer {
+    background-color: #1a3040;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    nav.animated-nav {
+        flex-direction: column;
+    }
+
+    header.welcome-header {
+        flex-direction: column;
+    }
+
+    form.formulaire {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards IUM 🏆</title>
+    <link rel="stylesheet" href="nominer.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <header class="animated-header">
+        <h1>ANNUAL AWARDS <br> <strong>IUM SHINE</strong>🏆</h1>
+    </header>
+    <nav class="animated-nav">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="#">Catégories</a>
+            <a href="nominer.html">Nominer</a>
+            <a href="#">Voter</a>
+            <a href="#">Résultats</a>
+            <a href="#">Admin</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="form-title">Nominer</h2>
+        <section id="categories" class="categories">
+            <div class="category">
+                <h3>Meilleurs Étudiants 🧍🏾‍⬛</h3>
+                <button onclick="scrollToForm('Meilleurs Étudiants')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Leader inspirant 🦾🏾</h3>
+                <button onclick="scrollToForm('Leader inspirant')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Meilleurs binôme / trinôme 🢪🏾🢪🏾</h3>
+                <button onclick="scrollToForm('Meilleurs binôme / trinôme')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Meilleurs joueurs ⚽</h3>
+                <button onclick="scrollToForm('Meilleurs joueurs')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Roi / Reine 💯</h3>
+                <button onclick="scrollToForm('Roi / Reine')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Meilleurs Styles vestimentaires 👨🏾‍⚖️</h3>
+                <button onclick="scrollToForm('Meilleurs Styles vestimentaires')">Nominer</button>
+            </div>
+            <div class="category">
+                <h3>Meilleurs membres du BUE 🚀</h3>
+                <button onclick="scrollToForm('Meilleurs membres du BUE')">Nominer</button>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2025 Awards IUM. Tous droits réservés.</p>
+        </footer>
+        <script src="cat.js"></script>
+        <script>
+            const toggle = document.querySelector(".nav-toggle");
+            const navLinks = document.querySelector(".nav-links");
+        
+            toggle.addEventListener("click", () => {
+                const isVisible = navLinks.classList.toggle("show");
+                toggle.setAttribute("aria-expanded", isVisible);
+            });
+        </script>
+        
+</body>
+
+</html>
+    

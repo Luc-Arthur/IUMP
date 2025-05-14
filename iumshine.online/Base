@@ -1,0 +1,9 @@
+CREATE TABLE candidats (
+    idNomi INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    categorie VARCHAR(100) NOT NULL,
+    photo VARCHAR(255) NOT NULL,
+    numero_attribution VARCHAR(255) NOT NULL,
+    date_soumission TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

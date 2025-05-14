@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards IUM 🏆</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <header class="animated-header">
+        <h1>ANNUAL AWARDS <br> <strong>IUM SHINE</strong>🏆</h1>
+    </header>
+    <nav class="animated-nav">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="#">Catégories</a>
+            <a href="nominer.html">Nominer</a>
+            <a href="#">Voter</a>
+            <a href="#">Résultats</a>
+            <a href="inscri_ad.html">Admin</a>
+        </div>
+    </nav>
+    <header class="welcome-header">
+        <div class="header-content">
+            <!-- <img src="1.jpg" alt="Logo gauche" class="logo" /> -->
+            <h1 class="welcome-text">Bienvenue sur IUM SHINE 🏆</h1>
+            <!-- <img src="1.jpg" alt="Logo droite" class="logo" /> -->
+        </div>
+    </header>
+    <p id="st">Votez pour les meilleurs de l'année ! Inscrivez vos favoris et soutenez-les jusqu'à la victoire !</p>
+    <section class="form-section">
+        <!-- Formulaire à gauche -->
+        <form method="post" action="inscription.php" enctype="multipart/form-data" class="formulaire">
+            <h3>Formulaire d'inscription</h3>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="category">Catégorie :</label>
+            <select id="category" name="category" required>
+                <option value="">-- Choisir une catégorie --</option>
+                <option value="etudiants">Meilleurs Étudiants</option>
+                <option value="leader">Leader inspirant</option>
+                <option value="binome">Meilleurs trinôme/binôme</option>
+                <option value="joueurs">Meilleurs joueurs</option>
+                <option value="roi_reine">Roi / Reine</option>
+                <option value="style">Meilleurs Styles vestimentaires</option>
+                <option value="bue">Meilleurs membres du BUE</option>
+            </select>
+
+            <label for="photo">Photo de profil :</label>
+            <input type="file" id="photo" name="photo" required>
+
+            <button type="submit">Soumettre</button>
+        </form>
+
+        <div class="carousel">
+            <div class="slides">
+             <img src="11.jpg" alt="Slide 1" />
+             <img src="ensemble.jpg" alt="Slide 2" />
+             <img src="4.jpg" alt="Slide 3" />
+             <img src="10.jpg" alt="Slide 4" />
+             <img src="1.jpg" alt="Slide 5" />
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy; 2025 Awards IUM. Tous droits réservés.</p>
+    </footer>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const image = document.getElementById('slideImage');
+            setTimeout(() => {
+                image.classList.add('slide-in');
+            }, 300); // Délai optionnel pour lisser l’effet
+        });
+
+
+        // Effet explosion de confettis
+        setTimeout(() => {
+            confetti({
+                particleCount: 150,
+                spread: 100,
+                origin: { y: 0.6 },
+                colors: ['#bb0000', '#ffffff', '#ffaa00', '#44cc44', '#3366ff']
+            });
+        }, 600); // Légère attente pour faire apparaître après l’image
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            navToggle.addEventListener('click', () => {
+                const isVisible = navLinks.getAttribute('data-visible') === "true";
+
+                // Basculer l'état
+                navLinks.setAttribute('data-visible', !isVisible);
+                navToggle.setAttribute('aria-expanded', !isVisible);
+
+                // Animation optionnelle
+                if (!isVisible) {
+                    navLinks.style.animation = 'slideDown 0.3s ease-out';
+                }
+            });
+        });
+
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(document.querySelectorAll('.carousel img'));
+            const slideCount = slides.length;
+            let currentIndex = 0;
+
+            // Clone la première image et l'ajoute à la fin pour un effet infini
+            const cloneFirst = slides[0].cloneNode(true);
+            track.appendChild(cloneFirst);
+
+            function goToSlide(index) {
+                track.style.transform = 'translateX(-${ index *100}%)';
+                currentIndex = index;
+
+                // Réinitialisation silencieuse pour l'effet infini
+                if (index === slideCount) {
+                    setTimeout(() => {
+                        track.style.transition = 'none';
+                        track.style.transform = 'translateX(0)';
+                        setTimeout(() => {
+                            track.style.transition = 'transform 1s ease';
+                        }, 50);
+                    }, 1000);
+                    currentIndex = 0;
+                }
+            }
+
+            // Défilement automatique
+            setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 3000); // Change toutes les 3 secondes
+        });
+    </script>
+</body>
+
+</html>
