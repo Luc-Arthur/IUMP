@@ -1,0 +1,404 @@
+/* Reset général */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header et navigation */
+header.animated-header {
+    background-color: #a32d2d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    animation: slideDownFade 1s ease-out;
+}
+
+header.animated-header h1 {
+    font-size: 35px;
+}
+
+nav.animated-nav {
+    background-color: #a32d2d;
+    padding: 10px 0;
+    position: relative;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* Ajouts/modifications dans style.css */
+
+/* Nav en slide-up */
+.animated-nav.slide-up {
+    transform: translateY(-100%);
+    animation: slideFromTop 0.5s ease-out forwards;
+    background-color: rgba(163, 45, 45, 0.9);
+}
+
+@keyframes slideFromTop {
+    to { transform: translateY(0); }
+}
+
+/* Fond lightred pour la welcome-section */
+.welcome-header {
+    background-color: #ffcccc; /* Lightred */
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Suppression du carousel latéral */
+.form-section .carousel {
+    display: none;
+}
+
+/* Hover sur les textes */
+@media (hover: hover) {
+    a:hover, .nav-links a:hover, .btn:hover {
+        color: #f39c12;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+}
+
+/* Ajustements responsive */
+@media (max-width: 768px) {
+    .welcome-header {
+        padding: 1.5rem;
+    }
+}
+
+/* Header de bienvenue */
+header.welcome-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    color: #a32d2d;
+    text-align: center;
+}
+
+/* Paragraphe principal */
+#st {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+}
+
+/* Formulaire d'inscription */
+section.form-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+form.formulaire {
+    background-color: #a32d2d;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 650px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form.formulaire h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+form.formulaire label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+form.formulaire input,
+form.formulaire select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+form.formulaire button {
+    background-color: #f76500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form.formulaire button:hover {
+    background-color: #e55c00;
+}
+
+/* Carousel */
+.carousel {
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    animation: slide 15s infinite;
+}
+
+.slides img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Section Gala */
+.event-gala {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff0f5;
+}
+
+.event-gala h2 {
+    color: #a32d2d;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.horizontal-carousel {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.h-slides {
+    display: flex;
+    animation: horizontalSlide 20s infinite linear;
+}
+
+.h-slides img {
+    min-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: 0 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a3040;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes slideDownFade {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
+
+@keyframes horizontalSlide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    header.animated-header h1 {
+        font-size: 28px;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links[data-visible="true"] {
+        display: flex;
+    }
+    
+    .welcome-text {
+        font-size: 1.2rem;
+    }
+    
+    #st {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    
+    section.form-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    form.formulaire {
+        margin-bottom: 30px;
+    }
+    
+    .carousel {
+        max-width: 100%;
+    }
+    
+    .h-slides img {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header.animated-header h1 {
+        font-size: 22px;
+    }
+    
+    .welcome-text {
+        font-size: 1rem;
+    }
+    
+    #st {
+        font-size: 14px;
+    }
+    
+    .h-slides img {
+        height: 120px;
+    }
+}
+
+
+/* ====== EVENT SECTION ====== */
+.inspiration-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.event-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  background: rgba(255,255,255,0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 200px;
+}
+/* ====== GALLERY SECTION ====== */
+.main-image {
+  width: 35%;
+margin-left: 15rem;
+  height: auto;
+  max-height: 70vh;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.responsive-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.thumbnails img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+p {
+  text-align: center;
+  font-family: var(--font-decorative);
+  font-size: 1.1rem;
+}
+
+h3 {
+  margin: 40px 0 20px 300px;
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+  color: #b91c1c;
+  font-weight: bold;
+}
